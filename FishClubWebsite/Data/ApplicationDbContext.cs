@@ -18,6 +18,7 @@ namespace FishClubWebsite.Data
         {
         }
         // Dbset for Models
+        public DbSet<Fish> Fishes { get; set; }
 
         // starter account for Identity
         public static async Task CreateAdminAccount(IServiceProvider serviceProvider, IConfiguration configuration)
