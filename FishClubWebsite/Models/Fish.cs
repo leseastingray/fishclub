@@ -15,7 +15,10 @@ namespace FishClubWebsite.Models
         // PK for database
         public int FishID { get; set; }
 
+        [StringLength(80, MinimumLength = 3)]
+        [Required(ErrorMessage = "Please enter the name of the fish")]
         public string FName { get; set; }
+
         public string FSize { get; set; }
         public string FDiet { get; set; }
         public string FHabitat { get; set; }

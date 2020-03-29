@@ -30,3 +30,9 @@ C:\Users\Merokemeh\Documents\ASPNET\termproject-leseastingray\FishClubWebsite\Fi
 C:\Users\Merokemeh\Documents\ASPNET\termproject-leseastingray\FishClubWebsite\FishClubWebsite\obj\Debug\netcoreapp2.2\FishClubWebsite.dll
 C:\Users\Merokemeh\Documents\ASPNET\termproject-leseastingray\FishClubWebsite\FishClubWebsite\obj\Debug\netcoreapp2.2\FishClubWebsite.pdb
 C:\Users\Merokemeh\Documents\ASPNET\termproject-leseastingray\FishClubWebsite\FishClubWebsite\obj\Debug\netcoreapp2.2\FishClubWebsite.csproj.CopyComplete
+C:\Users\Merokemeh\Documents\ASPNET\termproject-leseastingray\FishClubWebsite\FishClubWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Fish\Create.g.cshtml.cs
+C:\Users\Merokemeh\Documents\ASPNET\termproject-leseastingray\FishClubWebsite\FishClubWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Fish\Delete.g.cshtml.cs
+C:\Users\Merokemeh\Documents\ASPNET\termproject-leseastingray\FishClubWebsite\FishClubWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Fish\Details.g.cshtml.cs
+C:\Users\Merokemeh\Documents\ASPNET\termproject-leseastingray\FishClubWebsite\FishClubWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Fish\Edit.g.cshtml.cs
+C:\Users\Merokemeh\Documents\ASPNET\termproject-leseastingray\FishClubWebsite\FishClubWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Fish\Index.g.cshtml.cs
+C:\Users\Merokemeh\Documents\ASPNET\termproject-leseastingray\FishClubWebsite\FishClubWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Account\Login.g.cshtml.cs

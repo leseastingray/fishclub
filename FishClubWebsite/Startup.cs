@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using FishClubWebsite.Data;
+using FishClubWebsite.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -72,6 +73,8 @@ namespace FishClubWebsite
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+            // Seed data ?
+
             // For creating a starting AdminAccount
             //ApplicationDbContext.CreateAdminAccount(app.ApplicationServices, Configuration).Wait();
         }

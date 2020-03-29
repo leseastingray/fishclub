@@ -10,10 +10,10 @@ namespace FishClubWebsite.Models
     public class LoginViewModel
     {
         [Required]
-        [UIHint("email")]
+        [UIHint("Email")]
         public string Email { get; set; }
         [Required]
-        [UIHint("password")]
+        [UIHint("Password")]
         public string Password { get; set; }
     }
 }

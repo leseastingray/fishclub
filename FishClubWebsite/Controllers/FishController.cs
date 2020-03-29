@@ -49,6 +49,7 @@ namespace FishClubWebsite.Controllers
         }
 
         // GET: Fish/Create
+        [Authorize(Roles = "Members")]
         public IActionResult Create()
         {
             return View();
@@ -57,7 +58,6 @@ namespace FishClubWebsite.Controllers
         // POST: Fish/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        // add authorization???
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("FishID,FName,FSize,FDiet,FHabitat,FLocation,Date")] Fish fish)
@@ -72,6 +72,7 @@ namespace FishClubWebsite.Controllers
         }
 
         // GET: Fish/Edit/5
+        [Authorize(Roles = "Members")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -123,6 +124,7 @@ namespace FishClubWebsite.Controllers
         }
 
         // GET: Fish/Delete/5
+        [Authorize(Roles = "Members")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
