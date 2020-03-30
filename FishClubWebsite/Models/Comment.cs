@@ -17,7 +17,7 @@ namespace FishClubWebsite.Models
         public string CommentText { get; set; }
 
         [Range(1,5)]
-        [Required(ErrorMessage = "Please choose a rating for the fish")]
+        [Required(ErrorMessage = "Please choose a rating number 1, 2, 3, 4, or 5 for the fish")]
         public int Rating { get; set; }
 
         // Date added

@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using FishClubWebsite.Data;
 using FishClubWebsite.Models;
+using FishClubWebsite.Repositories;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -35,6 +36,10 @@ namespace FishClubWebsite
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
+            // Dependency Injection for real database
+            //services.AddTransient<IFishRepository, FishRepository>();
+            // Dependency Injection for testing
+            services.AddTransient<IFishRepository, FakeFishRepository>();
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
@@ -73,8 +78,8 @@ namespace FishClubWebsite
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-            // Seed data ?
-
+            // Seed data
+            //SeedData.Seed(app);
             // For creating a starting AdminAccount
             //ApplicationDbContext.CreateAdminAccount(app.ApplicationServices, Configuration).Wait();
         }

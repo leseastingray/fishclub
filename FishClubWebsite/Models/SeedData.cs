@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using FishClubWebsite.Data;
 
@@ -10,10 +11,10 @@ namespace FishClubWebsite.Models
     public class SeedData
     {
         // Method to seed data in case of empty database
-        public static void Seed(IServiceProvider services)
+        public static void Seed(IApplicationBuilder app)
         {
             // Initialize and define context
-            ApplicationDbContext context = services.GetRequiredService<ApplicationDbContext>();
+            ApplicationDbContext context = app.ApplicationServices.GetRequiredService<ApplicationDbContext>();
             // Make sure database has been created
             context.Database.EnsureCreated();
 

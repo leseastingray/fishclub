@@ -81,5 +81,24 @@ namespace FishClubWebsite.Repositories
                     where f.FSize.Contains(size)
                     select f).ToList();
         }
+        // Add comment associated with Fish
+        public void AddComment(int fishID, Comment comment)
+        {
+            // Get fish object from fishid parameter
+            Fish fish = GetFishById(fishID);
+            // Add to the Fish comment from comment parameter
+            fish.Comments.Add(comment);
+            // Update database and save changes
+            context.Fishes.Update(fish);
+            context.SaveChanges();
+        }
+        // Get list of comments associated with Fish
+        public List<Comment> GetCommentsByFishID(int fishID)
+        {
+            // Get fish object from fishid parameter
+            Fish fish = GetFishById(fishID);
+            // Get list of comments associated with that fish object
+            return fish.Comments.ToList();
+        }
     }
 }

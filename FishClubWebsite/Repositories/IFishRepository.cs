@@ -15,6 +15,9 @@ namespace FishClubWebsite.Repositories
         List<Fish> GetFishByLocation(string location);
         List<Fish> GetFishByHabitat(string habitat);
 
+        void AddComment(int fishID, Comment comment);
+        List<Comment> GetCommentsByFishID(int fishID);
+
         int AddFish(Fish fish);
         int EditFish(Fish fish);
         int DeleteFish(int id);

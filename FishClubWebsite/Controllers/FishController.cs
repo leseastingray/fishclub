@@ -10,6 +10,7 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Identity;
 using FishClubWebsite.Data;
 using FishClubWebsite.Models;
+using FishClubWebsite.Repositories;
 
 namespace FishClubWebsite.Controllers
 {
@@ -17,17 +18,26 @@ namespace FishClubWebsite.Controllers
     {
         private readonly ApplicationDbContext context;
         private readonly UserManager<AppUser> userManager;
+        public IFishRepository fishRepo;
 
-        public FishController(ApplicationDbContext context, UserManager<AppUser> userManager)
+        // Constructor with repository
+        public FishController(IFishRepository fishRepo)
+        {
+            this.fishRepo = fishRepo;
+        }
+
+        // Constructor with context and userManager, default from scaffolding
+        /*public FishController(ApplicationDbContext context, UserManager<AppUser> userManager)
         {
             this.context = context;
             this.userManager = userManager;
         }
-
+        */
         // GET: Fish
-        public async Task<IActionResult> Index()
+        public ViewResult Index()
         {
-            return View(await context.Fishes.ToListAsync());
+            var fishes = fishRepo.GetAllFish();
+            return View(fishes);
         }
 
         // GET: Fish/Details/5
