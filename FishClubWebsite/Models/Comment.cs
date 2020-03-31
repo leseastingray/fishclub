@@ -14,6 +14,7 @@ namespace FishClubWebsite.Models
         [StringLength(80, MinimumLength = 3)]
         [Required(ErrorMessage = "Please enter the name of the fish")]
         public string FishName { get; set; }
+        public int FishID { get; set; }
         public string CommentText { get; set; }
 
         [Range(1,5)]

@@ -1,10 +1,10 @@
-﻿@model IEnumerable<FishClubWebsite.Models.Fish>
+﻿@model List<FishClubWebsite.Models.Fish>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Fish Index</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -13,22 +13,22 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.FName)
+                Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FSize)
+                Size
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FDiet)
+                Diet
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FHabitat)
+                Habitat
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FLocation)
+                Location
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Date)
+                Date Added
             </th>
             <th></th>
         </tr>

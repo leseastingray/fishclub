@@ -10,45 +10,52 @@
     <h4>Fish</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FName)
+        <dt class="col-sm-2">
+            Name
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.FName)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FSize)
+        <dt class="col-sm-2">
+            Size
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.FSize)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FDiet)
+        <dt class="col-sm-2">
+            Diet
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.FDiet)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FHabitat)
+        <dt class="col-sm-2">
+            Habitat
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.FHabitat)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FLocation)
+        <dt class="col-sm-2">
+            Location
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.FLocation)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Date)
+        <dt class="col-sm-2">
+            Date
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Date)
+        </dd>
+        <dt class="col-sm-2">
+            User Comments
+        </dt>
+        <dd class="col-sm-10">
+            <a asp-action="Comments" asp-route-is="@Model.FishID">View Comments</a>
         </dd>
     </dl>
 </div>
 <div>
+    <a asp-action="AddComment" asp-route-is="@Model.FishID">Add Comment</a> |
     <a asp-action="Edit" asp-route-id="@Model.FishID">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>

@@ -37,3 +37,6 @@ C:\Users\Merokemeh\Documents\ASPNET\termproject-leseastingray\FishClubWebsite\Fi
 C:\Users\Merokemeh\Documents\ASPNET\termproject-leseastingray\FishClubWebsite\FishClubWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Fish\Index.g.cshtml.cs
 C:\Users\Merokemeh\Documents\ASPNET\termproject-leseastingray\FishClubWebsite\FishClubWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Account\Login.g.cshtml.cs
 C:\Users\Merokemeh\Documents\ASPNET\termproject-leseastingray\FishClubWebsite\FishClubWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Account\AccessDenied.g.cshtml.cs
+C:\Users\Merokemeh\Documents\ASPNET\termproject-leseastingray\FishClubWebsite\FishClubWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Fish\AddComment.g.cshtml.cs
+C:\Users\Merokemeh\Documents\ASPNET\termproject-leseastingray\FishClubWebsite\FishClubWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Fish\Comments.g.cshtml.cs
+C:\Users\Merokemeh\Documents\ASPNET\termproject-leseastingray\FishClubWebsite\FishClubWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Fish\Search.g.cshtml.cs

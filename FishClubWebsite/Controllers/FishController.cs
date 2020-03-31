@@ -34,22 +34,16 @@ namespace FishClubWebsite.Controllers
         }
         */
         // GET: Fish
-        public ViewResult Index()
+        public IActionResult Index()
         {
-            var fishes = fishRepo.GetAllFish();
+            List<Fish> fishes = fishRepo.GetAllFish();
             return View(fishes);
         }
 
         // GET: Fish/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public IActionResult Details(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var fish = await context.Fishes
-                .FirstOrDefaultAsync(m => m.FishID == id);
+            Fish fish = fishRepo.GetFishById(id);
             if (fish == null)
             {
                 return NotFound();
@@ -166,6 +160,46 @@ namespace FishClubWebsite.Controllers
         private bool FishExists(int id)
         {
             return context.Fishes.Any(e => e.FishID == id);
+        }
+
+        // Get Add Comment
+        public IActionResult AddComment()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        // Post Add Comment
+        public RedirectToActionResult AddComment(int id, Comment comment)
+        {
+            if (ModelState.IsValid)
+            {
+                fishRepo.AddComment(id, comment);
+                return RedirectToAction("Details", fishRepo.GetFishById(id));
+            }
+            else return RedirectToAction("AddComment", fishRepo.GetFishById(id));
+        }
+        // GET: Comments
+        public IActionResult Comments(int id)
+        {
+            List<Comment> comments = fishRepo.GetCommentsByFishID(id);
+            return View(comments);
+        }
+
+        // Search View
+        public IActionResult Search()
+        {
+            return View();
+        }
+
+        // Search by Name
+        public IActionResult SearchByName(string name)
+        {
+            if (name != null)
+            {
+                return View("SearchResults", fishRepo.GetFishByName(name));
+            }
+            return View("Search");
         }
     }
 }

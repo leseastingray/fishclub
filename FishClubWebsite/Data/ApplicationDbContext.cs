@@ -50,5 +50,8 @@ namespace FishClubWebsite.Data
                 }
             }
         }
+
+        // starter account for Identity
+        public DbSet<FishClubWebsite.Models.Comment> Comment { get; set; }
     }
 }

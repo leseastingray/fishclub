@@ -18,6 +18,7 @@ namespace FishClubWebsite
             // Create new Fish object
             Fish fish = new Fish
             {
+                FishID = 0,
                 FName = "Bluespotted ribbontail ray",
                 FSize = "Small",
                 FDiet = "Invertebrates",
@@ -29,8 +30,9 @@ namespace FishClubWebsite
             fishes.Add(fish);
 
             // Create new Fish object
-            fish = new Fish
+            Fish fish1 = new Fish
             {
+                FishID = 1,
                 FName = "Banded sea krait",
                 FSize = "Medium",
                 FDiet = "Eels",
@@ -39,11 +41,12 @@ namespace FishClubWebsite
                 Date = DateTime.Parse("1/11/2019")
             };
             // Add new Fish object to the List
-            fishes.Add(fish);
+            fishes.Add(fish1);
 
             // Create new Fish object
-            fish = new Fish
+            Fish fish2 = new Fish
             {
+                FishID = 2,
                 FName = "Painted frogfish",
                 FSize = "Small",
                 FDiet = "Small fish",
@@ -52,7 +55,7 @@ namespace FishClubWebsite
                 Date = DateTime.Parse("2/14/2019")
             };
             // Add new Fish object to the List
-            fishes.Add(fish);
+            fishes.Add(fish2);
         }
 
         public int AddFish(Fish fish)
