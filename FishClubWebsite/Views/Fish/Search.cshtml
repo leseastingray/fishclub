@@ -6,6 +6,13 @@
 <h1>Search</h1>
 <div>
     <a>Search by Fish Name</a>
+    <form asp-action="Index">
+        <div>
+            <label>Name</label>
+            <input type="text" id="fishName">
+        </div>
+        <input type="button" value="Search" onclick="location.href='@Url.Action("SearchByName", "Fishes")?name=' + document.getElementById('fishName').value" />
+    </form>
     <a>Search by Location</a>
     <a>Search by Habitat</a>
 </div>

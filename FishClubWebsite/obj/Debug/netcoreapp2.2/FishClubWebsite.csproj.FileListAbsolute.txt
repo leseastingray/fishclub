@@ -47,3 +47,4 @@ C:\Users\Merokemeh\Documents\ASPNET\termproject-leseastingray\FishClubWebsite\Fi
 C:\Users\Merokemeh\Documents\ASPNET\termproject-leseastingray\FishClubWebsite\FishClubWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Admin\CreateAccount.g.cshtml.cs
 C:\Users\Merokemeh\Documents\ASPNET\termproject-leseastingray\FishClubWebsite\FishClubWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Admin\EditRole.g.cshtml.cs
 C:\Users\Merokemeh\Documents\ASPNET\termproject-leseastingray\FishClubWebsite\FishClubWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Admin\EditAccount.g.cshtml.cs
+C:\Users\Merokemeh\Documents\ASPNET\termproject-leseastingray\FishClubWebsite\FishClubWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Fish\SearchResults.g.cshtml.cs

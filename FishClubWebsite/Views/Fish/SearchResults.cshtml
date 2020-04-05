@@ -1,0 +1,65 @@
+﻿@model IEnumerable<FishClubWebsite.Models.Fish>
+
+@{
+    ViewData["Title"] = "SearchResults";
+}
+
+<h1>SearchResults</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Size
+            </th>
+            <th>
+                Diet
+            </th>
+            <th>
+                Habitat
+            </th>
+            <th>
+                Location
+            </th>
+            <th>
+                Date Added
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FSize)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FDiet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FHabitat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.FishID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.FishID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.FishID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
