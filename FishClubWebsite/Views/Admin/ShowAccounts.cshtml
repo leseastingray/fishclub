@@ -1,0 +1,54 @@
+﻿@model IEnumerable<AppUser>
+@{
+    ViewData["Title"] = "Show Accounts";
+}
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+    <div class="panel-body">
+        <h3>Accounts</h3>
+        <table class="table table-lg table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>FirstName</th>
+                    <th>LastName</th>
+                    <th>UserName</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            @if (Model.Count() == 0)
+            {
+                <tr><td colspan="3" class="text-center">No Member Accounts</td></tr>
+            }
+            else
+            {
+                foreach (AppUser user in Model)
+                {
+                    <tr>
+                        <td>@user.Id</td>
+                        <td>@user.FirstName</td>
+                        <td>@user.LastName</td>
+                        <td>@user.UserName</td>
+                        <td>@user.Email</td>
+                        <td>
+                            <form asp-action="DeleteAccount" asp-route-id="@user.Id" method="post">
+                                <a class="btn btn-sm btn-primary" asp-action="EditAccount"
+                                   asp-route-id="@user.Id">Edit</a>
+                                <button type="submit"
+                                        class="btn btn-sm btn-danger">
+                                    Delete
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+    <a asp-action="Index">Member Admin Page</a>
+    <a asp-action="CreateAccount">Create an Account</a>
+</body>
