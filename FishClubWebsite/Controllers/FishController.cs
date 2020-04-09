@@ -21,18 +21,18 @@ namespace FishClubWebsite.Controllers
         public IFishRepository fishRepo;
 
         // Constructor with repository
-        /*public FishController(IFishRepository fishRepo)
+        public FishController(IFishRepository fishRepo)
         {
             this.fishRepo = fishRepo;
         }
-        */
+        
         // Constructor with context and userManager, default from scaffolding
-        public FishController(ApplicationDbContext context, UserManager<AppUser> userManager)
+        /*public FishController(ApplicationDbContext context, UserManager<AppUser> userManager)
         {
             this.context = context;
             this.userManager = userManager;
         }
-        
+        */
         // GET: Fish
         public IActionResult Index()
         {

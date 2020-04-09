@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
@@ -14,7 +15,7 @@ using FishClubWebsite.Infrastructure;
 
 namespace FishClubWebsite.Controllers
 {
-    [Authorize(Roles = "Admins")]
+    //[Authorize(Roles = "Admins")]
     public class AdminController : Controller
     {
         private UserManager<AppUser> userManager;
@@ -46,12 +47,13 @@ namespace FishClubWebsite.Controllers
         /*
          * Account Administration
          */
-         [AllowAnonymous]
+         [Authorize(Roles = "Members")]
         // Show Accounts page - lists member accounts
         public ViewResult ShowAccounts()
         {
             return View(userManager.Users);
         }
+        [Authorize(Roles = "Admins")]
         // Create User Get Method
         public ViewResult CreateAccount()
         {
@@ -87,6 +89,7 @@ namespace FishClubWebsite.Controllers
             }
             return View(model);
         }
+        [Authorize(Roles = "Admins")]
         // Edit Account Get Method
         public async Task<IActionResult> EditAccount(string id)
         {

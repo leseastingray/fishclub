@@ -60,10 +60,26 @@ namespace FishClubWebsite
             // Dependency Injection for testing
             //services.AddTransient<IFishRepository, FakeFishRepository>();
 
-            // Add Identity
+            // Add Identity (default)
+            
             services.AddDefaultIdentity<IdentityUser>()
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+            
+            // Add Identity and Roles
+            /*
+            services.AddIdentity<AppUser, IdentityRole>(opts =>
+            {
+                // member email and password requirements
+                opts.User.RequireUniqueEmail = true;
+                opts.Password.RequiredLength = 6;
+                opts.Password.RequireNonAlphanumeric = false;
+                opts.Password.RequireLowercase = false;
+                opts.Password.RequireUppercase = false;
+                opts.Password.RequireDigit = true;
+            }).AddEntityFrameworkStores<ApplicationDbContext>()
+              .AddDefaultTokenProviders();
+              */
 
             services.AddMvc();//.SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
@@ -113,7 +129,7 @@ namespace FishClubWebsite
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
             // Seed data
-            //SeedData.Seed(app);
+            SeedData.Seed(app);
 
             // Ensure that the database has been created and the latest migration applied
             context.Database.Migrate();
