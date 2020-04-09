@@ -53,7 +53,7 @@ namespace FishClubWebsite.Controllers
         }
 
         // GET: Fish/Create
-        [Authorize(Roles = "Members")]
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -76,7 +76,7 @@ namespace FishClubWebsite.Controllers
         }
 
         // GET: Fish/Edit/5
-        [Authorize(Roles = "Members")]
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -128,7 +128,7 @@ namespace FishClubWebsite.Controllers
         }
 
         // GET: Fish/Delete/5
-        [Authorize(Roles = "Members")]
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -163,6 +163,7 @@ namespace FishClubWebsite.Controllers
         }
 
         // Get Add Comment
+        [Authorize]
         public IActionResult AddComment()
         {
             return View();

@@ -62,12 +62,11 @@ namespace FishClubWebsite
 
             // Add Identity (default)
             
-            services.AddDefaultIdentity<IdentityUser>()
+            /*services.AddDefaultIdentity<IdentityUser>()
                 .AddDefaultUI(UIFramework.Bootstrap4)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+                .AddEntityFrameworkStores<ApplicationDbContext>();*/
             
             // Add Identity and Roles
-            /*
             services.AddIdentity<AppUser, IdentityRole>(opts =>
             {
                 // member email and password requirements
@@ -79,7 +78,7 @@ namespace FishClubWebsite
                 opts.Password.RequireDigit = true;
             }).AddEntityFrameworkStores<ApplicationDbContext>()
               .AddDefaultTokenProviders();
-              */
+              
 
             services.AddMvc();//.SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
@@ -135,7 +134,7 @@ namespace FishClubWebsite
             context.Database.Migrate();
 
             // For creating a starting AdminAccount
-            //ApplicationDbContext.CreateAdminAccount(app.ApplicationServices, Configuration).Wait();
+            ApplicationDbContext.CreateAdminAccount(app.ApplicationServices, Configuration).Wait();
         }
     }
 }
