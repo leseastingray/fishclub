@@ -68,8 +68,8 @@ namespace FishClubWebsite.Controllers
         {
             if (ModelState.IsValid)
             {
-                context.Add(fish);
-                await context.SaveChangesAsync();
+                fishRepo.AddFish(fish);
+                //await context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             return View(fish);
@@ -176,7 +176,7 @@ namespace FishClubWebsite.Controllers
             if (ModelState.IsValid)
             {
                 fishRepo.AddComment(id, comment);
-                return RedirectToAction("Details", fishRepo.GetFishById(id));
+                return RedirectToAction("Index");
             }
             else return RedirectToAction("AddComment", fishRepo.GetFishById(id));
         }
@@ -193,14 +193,26 @@ namespace FishClubWebsite.Controllers
             return View();
         }
 
-        // Search by Name
-        public IActionResult SearchByName(string name)
+        // Search View
+        public IActionResult SearchResults()
         {
-            if (name != null)
+            return View();
+        }
+
+        // Search by Name
+        [HttpPost]
+        public RedirectToActionResult SearchByName(string id)
+        {
+            var fishes = from f in fishRepo.GetAllFish()
+                         select f;
+
+            if (!String.IsNullOrEmpty(id))
             {
-                return View("SearchResults", fishRepo.GetFishByName(name));
+                fishes = fishes.Where(f => f.FName.Contains(id));
             }
-            return View("Search");
+
+            ViewData["results"] = fishes;
+            return RedirectToAction("SearchResults", ViewData["results"]);
         }
     }
 }

@@ -1,10 +1,9 @@
 ﻿@model IEnumerable<FishClubWebsite.Models.Fish>
-
 @{
     ViewData["Title"] = "SearchResults";
 }
 
-<h1>SearchResults</h1>
+<h1>Search Results</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -34,7 +33,7 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+       @foreach (var item in Model) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.FName)
@@ -60,6 +59,6 @@
                 <a asp-action="Delete" asp-route-id="@item.FishID">Delete</a>
             </td>
         </tr>
-}
+        }
     </tbody>
 </table>

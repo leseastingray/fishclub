@@ -182,8 +182,6 @@ namespace FishClubWebsite.Controllers
          * Role Administration
          */
 
-        // ShowRoles currently not available due to ShowRoles View not
-        //  recognizing IEnumerable<IdentityRole>. Login locked for now
         public ViewResult ShowRoles() => View(roleManager.Roles);
 
         public IActionResult CreateRole() => View();
